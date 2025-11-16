@@ -136,7 +136,7 @@ def main():
 
         if choice == "1":
             owner = input("Owner (e.g. Loukas, Rana, George): ").strip()
-            task = input("New task: ").strip()
+            task = input("Add a new todo: ").strip()            
             if not task:
                 print("Nothing to add")
             else:
