@@ -143,7 +143,7 @@ def main():
         if choice == "1":
             owner = input("Owner (e.g. Loukas, Rana, George): ").strip()
             category = input("Category (optional, e.g. frontend, data, docs): ").strip()
-            task = input("New task: ").strip()
+            task = input("Describe your task: ").strip()
             if not task:
                 print("Nothing to add")
             else:
