@@ -47,6 +47,12 @@ def list_todos():
         owner_label = f"@{owner}" if owner else "@Unassigned"
         print(f"{i}. {box} {owner_label} - {text}")
 
+def format_entry(category, text):
+    """Return the task text with an optional [category] prefix."""
+    if category:
+        return f"[{category}] {text}"
+    return text
+
 
 def list_by_owner(owner):
     """Print tasks filtered by owner."""
@@ -137,10 +143,12 @@ def main():
         if choice == "1":
             owner = input("Owner (e.g. Loukas, Rana, George): ").strip()
             task = input("Add a new todo: ").strip()            
+            category = input("Category (optional, e.g. frontend, data, docs): ").strip()
             if not task:
                 print("Nothing to add")
             else:
-                add(task, owner)
+                entry = format_entry(category, task)
+                add(entry, owner)
         elif choice == "2":
             num = input("Task number to mark as done: ").strip()
             if num.isdigit():
