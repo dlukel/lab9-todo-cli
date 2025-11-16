@@ -137,7 +137,9 @@ def main():
         if choice == "1":
             owner = input("Owner (e.g. Loukas, Rana, George): ").strip()
             task = input("New task: ").strip()
-            if task:
+            if not task:
+                print("Nothing to add")
+            else:
                 add(task, owner)
         elif choice == "2":
             num = input("Task number to mark as done: ").strip()
